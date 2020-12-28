@@ -6,6 +6,9 @@
         <div class="jumbotron">
             <h1>{{ $category->name }}</h1>
 
+            <img src="/images/featured_image/{{ $category->featured_image ? $category->featured_image : '' }}" alt="{{$category->name }}" class="img-responsive featured_image" style="width:300px;">
+
+
             @if(Auth::user() && Auth::user()->role_id === 1)
 
             <div class="btn-group">

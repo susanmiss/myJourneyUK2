@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/', 'BlogsController@index');
+Route::get('/', 'CategoryController@index');
 
 Auth::routes();
 

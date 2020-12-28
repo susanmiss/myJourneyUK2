@@ -30,7 +30,7 @@ class MailController extends Controller {
 		];
 
 		Mail::send('emails.send', $data, function ($message) {
-			$message->to('ryan@gmail.com', 'Ryan')->subject('Mail received from larablog');
+			$message->to('susanfochesatto@gmail.com', 'Susan')->subject('Mail received from myJourneyUK');
 		});
 
 		Session::flash('contact_form_send', 'Thanks for contacting us, we will get back to you shortly!');

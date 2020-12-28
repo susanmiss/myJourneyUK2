@@ -30,8 +30,8 @@ class BlogsController extends Controller {
 	public function store(Request $request) {
 		// validate
 		$rules = [
-			'title' => ['required', 'min:20', 'max:160'],
-			'body' => ['required', 'min:202'],
+			'title' => ['required', 'min:5', 'max:160'],
+			'body' => ['required', 'min:5'],
 		];
 
 		$this->validate($request, $rules);
@@ -57,10 +57,10 @@ class BlogsController extends Controller {
 		}
 
 		// mail
-		$users = User::all();
-		foreach ($users as $user) {
-			Mail::to($user->email)->queue(new BlogPublished($blogByUser, $user));
-		}
+		// $users = User::all();
+		// foreach ($users as $user) {
+		// 	Mail::to($user->email)->queue(new BlogPublished($blogByUser, $user));
+		// }
 
 		Session::flash('blog_created_message', 'Congratulations on createing a great blog!');
 
