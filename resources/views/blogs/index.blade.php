@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@include('partials.meta_static')
+
 
 @section('content')
 

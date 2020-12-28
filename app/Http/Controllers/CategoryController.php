@@ -25,7 +25,9 @@ class CategoryController extends Controller {
             'name'=> ['required', 'min:3', 'max:160'],
        
         ];
-        $this->validate($request, $rules);
+		$this->validate($request, $rules);
+		$input['meta_title'] = str_limit($request->title, 55);
+		$input['meta_description'] = str_limit($request->body, 155);
         $input = $request->all();
         $input['slug'] =Str::slug($request->name);
 
@@ -58,10 +60,27 @@ class CategoryController extends Controller {
 
 
 	public function update(Request $request, $id) {
-		$category = Category::findOrFail($id);
-		$category->name = $request->name;
-		$category->slug = str_slug($request->name, '-');
-		$category->save();
+		// $category = Category::findOrFail($id);
+		// $category->name = $request->name;
+		// $category->slug = str_slug($request->name, '-');
+		// $category->save();
+		// return redirect('categories');
+		$input = $request->all();
+		$categories = Category::findOrFail($id);
+
+		if($file = $request->file('featured_image')){
+			if($categories->featured_image){
+				unlink('images/featured_image/' . $categories->featured_image);
+			}
+			$name = uniqid() . $file->getClientOriginalName();
+			$name = strtolower(str_replace(' ', '-', $name));
+			$file->move('images/featured_image/', $name);
+			$input['featured_image'] = $name;
+
+		}
+
+		$categories->update($input);
+
 		return redirect('categories');
 	}
 
