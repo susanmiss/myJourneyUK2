@@ -21,6 +21,22 @@ a:hover {
   color: #b92cdc !important;
 }
 
+.itemList {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 4.4rem 10%;
+}
+
+.Item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28rem;
+  margin: 0 0.5rem 2.3rem 0.5rem;
+  padding: 3px;
+}
+
 h1,
 h2,
 h3,
@@ -120,7 +136,6 @@ img::-moz-selection {
 .btn-primary {
   background-color: #b92cdc;
   border-color: #b92cdc;
-  margin-bottom: 10px;
 }
 
 .btn-primary:active,
@@ -215,7 +230,7 @@ img::-moz-selection {
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url("../header-bg.jpg");
+  background-image: url("/photos/header-bg.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;

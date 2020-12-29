@@ -27,7 +27,7 @@
 
             <div class="col-md-12">
               @if($blog->featured_image)
-                <img src="/images/featured_image/{{ $blog->featured_image ? $blog->featured_image : '' }}" alt="{{ str_limit($blog->title, 50) }}" class="img-responsive featured_image" style="width:300px;height:auto;"><br/>
+                <img src="/images/featured_image/{{ $blog->featured_image ? $blog->featured_image : '' }}" alt="{{ str_limit($blog->title, 50) }}" class="img-responsive featured_image" style="max-width:200px;height:auto;"><br/>
               @endif
             </div>
 
