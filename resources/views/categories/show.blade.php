@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 
-
 @section('content')
 
     <header class="container">
@@ -26,30 +25,55 @@
             @endif
     </header>
 
-        <div class="col-md-12 mt-5">
+        <div class="col mt-5">
             @foreach($category->blog as $blog)
                 <a href="{{ route('blogs.show', [$blog->slug]) }}" style="text-decoration: none;">
-                    <div class="container shadow p-5 mb-5 rounded bg-light" style="height: 400px;  border-radius: 20px;" >
-                        <h2>{{ $blog->title }}</h2>
+                    <div class="container shadow p-5 mb-5 rounded bg-light" style="height: 500px;  border-radius: 20px;" id="blog-container">
+                        <h2 class="mb-5 text-center">{{ $blog->title }}</h2>
+
                         <div class="container">
-                            <div class="row">
-                                <div class="col-md-6 pt-5">
-                                <p>{{ $blog->body }}</p>
+                            <div class="row text-center" >
+
+                                <div class="col-md-12 pt-5 col-sm-12 "   >
+                                    <p class="text-center">{!! str_limit($blog->body, 50) !!}</p>
+
+                             
                                 </div>
 
-                                <div class="col-md-4">
-                                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                                @foreach($category->blog as $blog)
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                        <img src="/images/featured_image/{{ $blog->featured_image }}" style="height: 260px; display:block; margin: auto;" class="d-block w-100">
+                                <div class="col-md-12 col-sm-12 container-carr" >
+
+                                    <!-- Carrousell -->
+                                    <div id="carouselExampleControls " class="carousel slide" data-ride="carousel" >
+
+                                   
+                                        <div class="carousel-inner " >
+                                            
+                                            <div class="carousel-item active ">
+                                            <img class="d-block w-100" src="/images/post_image/{{ $blog->image0 }}" alt="{{$blog->title}}" style=" max-height: 350px;">
+                                            </div>
+                                            <div class="carousel-item  ">
+                                            <img class="d-block w-100" src="/images/post_image/{{ $blog->image1 }}" alt="{{$blog->title}}" style="max-height: 350px;">
+                                            </div>
+                                            <div class="carousel-item  ">
+                                            <img class="d-block w-100" src="/images/post_image/{{ $blog->image2 }}" alt="{{$blog->title}}" style="max-height: 350px;">
+                                            </div>
+                                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                                                                
                                         </div>
-                                    </div>
-                                @endforeach
+                                       
+                                        </div>
+                                    <!-- Carrousel End -->
+                                     
                                 </div>
-                                </div>
-
-
+                            
+                
                             </div>
                         </div>
                         

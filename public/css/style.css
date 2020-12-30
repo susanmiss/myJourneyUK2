@@ -99,6 +99,10 @@ h6 {
   }
 }
 
+#blog-container {
+  height: 600px !important;
+}
+
 ::-moz-selection {
   background: #b92cdc;
   text-shadow: none;
@@ -225,6 +229,10 @@ img::-moz-selection {
     font-size: 1.25em;
     padding: 12px 0;
   }
+}
+
+.container-carroussel {
+  margin-left: 15% !important;
 }
 
 header.masthead {
@@ -410,6 +418,12 @@ header.masthead .intro-text .intro-heading {
   #portfolio .portfolio-item {
     margin: 0 0 30px;
   }
+}
+
+.container-carroussel {
+  margin-left: 15% !important;
+  display: block;
+  margin: auto;
 }
 
 .portfolio-modal .modal-dialog {

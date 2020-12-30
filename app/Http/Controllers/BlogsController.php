@@ -41,6 +41,7 @@ class BlogsController extends Controller {
 		$input['slug'] = str_slug($request->title);
 		$input['meta_title'] = str_limit($request->title, 55);
 		$input['meta_description'] = str_limit($request->body, 155);
+		
 		// image upload
 		if ($file = $request->file('featured_image')) {
 			$name = uniqid() . $file->getClientOriginalName();
@@ -49,7 +50,162 @@ class BlogsController extends Controller {
 			$input['featured_image'] = $name;
 		}
 
-		// $blog = Blog::create($input);
+		if ($file = $request->file('image0')) {
+			$name = uniqid() . $file->getClientOriginalName();
+			$name = strtolower(str_replace(' ', '-', $name));
+			$file->move('images/post_image/', $name);
+			$input['image0'] = $name;
+		}
+
+		if ($file = $request->file('image1')) {
+			$name = uniqid() . $file->getClientOriginalName();
+			$name = strtolower(str_replace(' ', '-', $name));
+			$file->move('images/post_image/', $name);
+			$input['image1'] = $name;
+		}
+
+		if ($file = $request->file('image2')) {
+			$name = uniqid() . $file->getClientOriginalName();
+			$name = strtolower(str_replace(' ', '-', $name));
+			$file->move('images/post_image/', $name);
+			$input['image2'] = $name;
+		}
+
+		if ($file = $request->file('image3')) {
+			$name = uniqid() . $file->getClientOriginalName();
+			$name = strtolower(str_replace(' ', '-', $name));
+			$file->move('images/post_image/', $name);
+			$input['image3'] = $name;
+		}
+
+		if ($file = $request->file('image4')) {
+			$name = uniqid() . $file->getClientOriginalName();
+			$name = strtolower(str_replace(' ', '-', $name));
+			$file->move('images/post_image/', $name);
+			$input['image4'] = $name;
+		}
+
+		if ($file = $request->file('image5')) {
+			$name = uniqid() . $file->getClientOriginalName();
+			$name = strtolower(str_replace(' ', '-', $name));
+			$file->move('images/post_image/', $name);
+			$input['image5'] = $name;
+		}
+
+		if ($file = $request->file('image6')) {
+			$name = uniqid() . $file->getClientOriginalName();
+			$name = strtolower(str_replace(' ', '-', $name));
+			$file->move('images/post_image/', $name);
+			$input['image6'] = $name;
+		}
+
+		if ($file = $request->file('image7')) {
+			$name = uniqid() . $file->getClientOriginalName();
+			$name = strtolower(str_replace(' ', '-', $name));
+			$file->move('images/post_image/', $name);
+			$input['image7'] = $name;
+		}
+
+		if ($file = $request->file('image8')) {
+			$name = uniqid() . $file->getClientOriginalName();
+			$name = strtolower(str_replace(' ', '-', $name));
+			$file->move('images/post_image/', $name);
+			$input['image8'] = $name;
+		}
+
+		if ($file = $request->file('image9')) {
+			$name = uniqid() . $file->getClientOriginalName();
+			$name = strtolower(str_replace(' ', '-', $name));
+			$file->move('images/post_image/', $name);
+			$input['image9'] = $name;
+		}
+
+		if ($file = $request->file('image10')) {
+			$name = uniqid() . $file->getClientOriginalName();
+			$name = strtolower(str_replace(' ', '-', $name));
+			$file->move('images/post_image/', $name);
+			$input['image10'] = $name;
+		}
+
+		if ($file = $request->file('image11')) {
+			$name = uniqid() . $file->getClientOriginalName();
+			$name = strtolower(str_replace(' ', '-', $name));
+			$file->move('images/post_image/', $name);
+			$input['image11'] = $name;
+		}
+
+		if ($file = $request->file('image12')) {
+			$name = uniqid() . $file->getClientOriginalName();
+			$name = strtolower(str_replace(' ', '-', $name));
+			$file->move('images/post_image/', $name);
+			$input['image12'] = $name;
+		}
+
+		if ($file = $request->file('image13')) {
+			$name = uniqid() . $file->getClientOriginalName();
+			$name = strtolower(str_replace(' ', '-', $name));
+			$file->move('images/post_image/', $name);
+			$input['image13'] = $name;
+		}
+
+		if ($file = $request->file('image14')) {
+			$name = uniqid() . $file->getClientOriginalName();
+			$name = strtolower(str_replace(' ', '-', $name));
+			$file->move('images/post_image/', $name);
+			$input['image14'] = $name;
+		}
+
+		if ($file = $request->file('image15')) {
+			$name = uniqid() . $file->getClientOriginalName();
+			$name = strtolower(str_replace(' ', '-', $name));
+			$file->move('images/post_image/', $name);
+			$input['image15'] = $name;
+		}
+
+		if ($file = $request->file('image16')) {
+			$name = uniqid() . $file->getClientOriginalName();
+			$name = strtolower(str_replace(' ', '-', $name));
+			$file->move('images/post_image/', $name);
+			$input['image16'] = $name;
+		}
+
+		if ($file = $request->file('image17')) {
+			$name = uniqid() . $file->getClientOriginalName();
+			$name = strtolower(str_replace(' ', '-', $name));
+			$file->move('images/post_image/', $name);
+			$input['image17'] = $name;
+		}
+		if ($file = $request->file('image18')) {
+			$name = uniqid() . $file->getClientOriginalName();
+			$name = strtolower(str_replace(' ', '-', $name));
+			$file->move('images/post_image/', $name);
+			$input['image18'] = $name;
+		}
+		if ($file = $request->file('image19')) {
+			$name = uniqid() . $file->getClientOriginalName();
+			$name = strtolower(str_replace(' ', '-', $name));
+			$file->move('images/post_image/', $name);
+			$input['image19'] = $name;
+		}
+
+		if ($file = $request->file('image20')) {
+			$name = uniqid() . $file->getClientOriginalName();
+			$name = strtolower(str_replace(' ', '-', $name));
+			$file->move('images/post_image/', $name);
+			$input['image20'] = $name;
+		}
+
+		
+		//  for ($x = 1; $x <= 20; $x++){
+		// 	if ($file = $request->file('image{{$x}}')) {
+		// 		$name = ['' => uniqid() . $file->getClientOriginalName()];
+		// 		// $name = strtolower(str_replace(' ', '-', $name));
+		// 		$file->move('images/post_image/', $name);
+		// 		$input['image{{$x}}'] = $name;
+		// 	}
+		//  }
+
+		 //$blog = Blog::create($input);
 		$blogByUser = $request->user()->blogs()->create($input);
 		// sync with categories
 		if ($request->category_id) {
