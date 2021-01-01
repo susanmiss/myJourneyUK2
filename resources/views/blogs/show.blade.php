@@ -4,16 +4,63 @@
 
 @section('content')
 
-   <div class="container-fluid">
+
+
+   <div class="container">
 
     <article>
 
-  
-
         <div class="col-md-12">
-          @if($blog->featured_image)
-            <img src="/images/featured_image/{{ $blog->featured_image ? $blog->featured_image : '' }}" alt="{{ str_limit($blog->title, 50) }}" class="img-responsive featured_image" style="max-width: 500px; display: block; margin: auto;"><br/>
-          @endif
+        <!-- Carrousell -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img class="d-block w-100" src="/images/post_image/{{ $blog->image0}}  "  style="max-height: 500px;">            </div>
+            <div class="carousel-item">
+            <img class="d-block w-100" src="/images/post_image/{{ $blog->image1}}  "  style="max-height: 500px;">            </div>
+            <div class="carousel-item">
+            <img class="d-block w-100" src="/images/post_image/{{ $blog->image2}}  "  style="max-height: 500px;">            </div>
+            <div class="carousel-item">
+            <img class="d-block w-100" src="/images/post_image/{{ $blog->image3}}  "  style="max-height: 500px;">            </div>
+            <div class="carousel-item">
+            <img class="d-block w-100" src="/images/post_image/{{ $blog->image4}}  "  style="max-height: 500px;">            </div>
+            <div class="carousel-item">
+            <img class="d-block w-100" src="/images/post_image/{{ $blog->image5}}  "  style="max-height: 500px;">            </div>
+            <div class="carousel-item">
+            <img class="d-block w-100" src="/images/post_image/{{ $blog->image6}}  "  style="max-height: 500px;">            </div>
+            <div class="carousel-item">
+            <img class="d-block w-100" src="/images/post_image/{{ $blog->image7}}  "  style="max-height: 500px;">            </div>
+            <div class="carousel-item">
+            <img class="d-block w-100" src="/images/post_image/{{ $blog->image8}}  "  style="max-height: 500px;">            </div>
+            <div class="carousel-item">
+            <img class="d-block w-100" src="/images/post_image/{{ $blog->image9}}  "  style="max-height: 500px;">            </div>
+            <div class="carousel-item">
+            <img class="d-block w-100" src="/images/post_image/{{ $blog->image10}}  "  style="max-height: 500px;">            </div>
+            <div class="carousel-item">
+            <img class="d-block w-100" src="/images/post_image/{{ $blog->image11}}  "  style="max-height: 500px;">            </div>
+            <div class="carousel-item">
+            <img class="d-block w-100" src="/images/post_image/{{ $blog->image12}}  "  style="max-height: 500px;">            </div>
+            <div class="carousel-item">
+            <img class="d-block w-100" src="/images/post_image/{{ $blog->image13}}  "  style="max-height: 500px;">            </div>
+            <div class="carousel-item">
+            <img class="d-block w-100" src="/images/post_image/{{ $blog->image14}}  "  style="max-height: 500px;">            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        
+<!-- Carrousel End -->
         </div>
 
         <div class="col-md-12">
@@ -57,9 +104,11 @@
 
     
       <div class="row justify-content-md-center">
-       <div class="col-md-10 ">
-          <p>{!! $blog->body !!}</p>
-          <p>Address: {{$blog->address}}</p> 
+       <div class="col-md-10 text-center">
+          
+          <p> <span class="font-weight-bold">Address:</span> {{$blog->address}}</p> 
+          <p><span class="font-weight-bold">City:</span>  {{$blog->city}}</p> 
+          <p><span class="font-weight-bold">Region:</span>  {{$blog->region}}</p> 
         </div> 
       </div>
      
@@ -69,34 +118,34 @@
 <div class="container">
      <div class="row" >
         <div class="col">
-            <img src="/images/post_image/{{ $blog->image0}}" style="margin-top: 8px; vertical-align: middle; width: 100%">         
+            <img src="/images/post_image/{{ $blog->image15}}" style="margin-top: 8px; vertical-align: middle; width: 100%" class="img-responsive">         
           </div>
           <div class="col">
-            <img src="/images/post_image/{{ $blog->image0}}" style="margin-top: 8px; vertical-align: middle; width: 100%">
+            <img src="/images/post_image/{{ $blog->image16}}" style="margin-top: 8px; vertical-align: middle; width: 100%" class="img-responsive">
           </div>
           <div class="col">
-            <img src="/images/post_image/{{ $blog->image0}}" style="margin-top: 8px; vertical-align: middle; width: 100%">
+            <img src="/images/post_image/{{ $blog->image17}}" style="margin-top: 8px; vertical-align: middle; width: 100%" class="img-responsive">
           </div>
       </div>
 
       <div class="row" >
         <div class="col" >
-            <img src="/images/post_image/{{ $blog->image0}}" style="margin-top: 8px; vertical-align: middle; width: 100%; height: 500px;">         
+            <img src="/images/post_image/{{ $blog->image18}}" style="margin-top: 8px; vertical-align: middle; width: 100%; " class="img-responsive">         
           </div>
           <div class="col">
-            <img src="/images/post_image/{{ $blog->image0}}" style="margin-top: 8px; vertical-align: middle; width: 100%; height: 500px;">
+            <img src="/images/post_image/{{ $blog->image19}}" style="margin-top: 8px; vertical-align: middle; width: 100%; " class="img-responsive">
           </div>
       </div>
 
       <div class="row" >
         <div class="col" >
-            <img src="/images/post_image/{{ $blog->image0}}" style="margin-top: 8px; vertical-align: middle; width: 100%;height: 400px;">         
+            <img src="/images/post_image/{{ $blog->image20}}" style="margin-top: 8px; vertical-align: middle; width: 100%;height: 400px;" class="img-responsive">         
           </div>
       </div>
 </div>
 
     <div class="row justify-content-md-center">
-       <div class="col-md-10 ">
+       <div class="col-md-10 text-center text-justify">
           <p>{!! $blog->body !!}</p>
         </div> 
     </div>
@@ -110,36 +159,37 @@
         </div> 
         @endif
     </div>
-    <!-- https://youtu.be/PAwzzBXUNNY
-    https://youtu.be/PAwzzBXUNNY?t=50
-    https://www.youtube.com/watch?v=PAwzzBXUNNY&t=32s -->
+
     
 
-    <!-- AIzaSyBl37aBwk41Wk2aFrE1TK90S3d53LA5Z2s -->
-  <div class="container">
+
+@if($blog->address || $blog->city)
+  <div class="container mt-5">
+    <h2 class="text-center">How to get there</h2>
     <div class="row">
+    
       <div class="col text-center text-center embed-responsive embed-responsive-16by9">
-        <h2 class="text-center">How to get there</h2>
           <iframe
           width="700"
           height="450"
           frameborder="0" style="border:0"
-          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBl37aBwk41Wk2aFrE1TK90S3d53LA5Z2s
+          src="https://www.google.com/maps/embed/v1/place?key={{env('GOOGLE_KEY')}}
         &q={{$blog->address}}" allowfullscreen class="embed-responsive-item">
         </iframe>
       </div>
-
+@endif    
     
        
     </div>
+
     </div>
 
 
 
-     <hr>
+
 
 <aside>
-<div id="disqus_thread"></div>
+<div id="disqus_thread" class="container mt-5"></div>
 <script>
 (function() {
   var d = document, s = d.createElement('script');
