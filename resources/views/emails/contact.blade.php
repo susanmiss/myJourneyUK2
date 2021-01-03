@@ -3,7 +3,7 @@
 
 <main class="container-fluid">
 
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
         <div class="jumbotron">
             <h1>Contact page</h1>
         </div>
@@ -43,7 +43,7 @@
 
         </div>
         <br>
-    </div>
+    </div> -->
 
 </main>
 

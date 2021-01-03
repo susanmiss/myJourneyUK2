@@ -1,10 +1,11 @@
+@ob_start()
 @extends('layouts.app')
 
-@include('partials.meta_static')
+
 
 @section('content')
 
-    <div class="container">
+    <div class="container mt-5">
 
         @if(Session::has('blog_created_message'))
             <div class="alert alert-success">
@@ -22,20 +23,27 @@
 
 
         @foreach($blogs as $blog)
-        <div class="col-md-8 offset-md-2 text-center">
-            <h2><a href={{ route('blogs.show', [$blog->slug]) }}>{{ $blog->title }}</a></h2>
+        <div class="container shadow p-5 mb-5 rounded bg-light" style="height: 500px;  border-radius: 20px;" id="blog-container">
+            <h1 class="text-center"><a href="{{ route('blogs.show', [$blog->slug]) }}" >{{ $blog->title }}</a></h1>
 
-            <div class="col-md-12">
+          
+          <div class="row">
+            <div class="text-center col-md-6 mt-5">
               @if($blog->featured_image)
-                <img src="/images/featured_image/{{ $blog->featured_image ? $blog->featured_image : '' }}" alt="{{ str_limit($blog->title, 50) }}" class="img-responsive featured_image" style="width:300px;height:auto;"><br/>
+                <img src="/images/featured_image/{{ $blog->featured_image ? $blog->featured_image : '' }}" alt="{{ str_limit($blog->title, 50) }}" class="img-responsive featured_image" style="max-width:400px;height:auto;"><br/>
               @endif
-            </div>
+            
 
-            <div class="lead">{!! str_limit($blog->body, 200) !!}</div>
-
+            <div class="text-center">
             @if($blog->user)
                 Author: <a href="{{ route('users.show', $blog->user->name) }}">{{ $blog->user->name }}</a> | Posted: {{ $blog->created_at->diffForHumans() }}
             @endif
+            </div>
+            </div>
+
+            <div class="lead text-center mt-5 col-md-6">{!! str_limit($blog->body, 200) !!}</div>
+            </div>
+        
             </div>
             <br><hr><br>
         @endforeach
