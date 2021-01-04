@@ -2,7 +2,7 @@
 
 Route::get('/', 'CategoryController@index');
 
-Auth::routes();
+Auth::routes(['/register' => false ]);
 
 Route::get('/blogs', 'BlogsController@index')->name('blogs');
 Route::get('/blogs/create', 'BlogsController@create')->name('blogs.create');

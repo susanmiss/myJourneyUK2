@@ -5,8 +5,9 @@
 
 @section('content')
 
-    <div class="container mt-5">
+    <div class="container col-md-12" style="margin-bottom: 100px;">
 
+        <div class="container">
         @if(Session::has('blog_created_message'))
             <div class="alert alert-success">
                 {{ Session::get('blog_created_message') }}
@@ -15,11 +16,12 @@
         @endif
 
         @if(Session::has('contact_form_send'))
-            <div class="alert alert-success">
+            <div class="alert alert-success ">
                 {{ Session::get('contact_form_send') }}
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
             </div>
         @endif
+        </div>
 
 
         @foreach($blogs as $blog)

@@ -27,6 +27,22 @@
 
 
     <div class="itemList" id="portfolio"> 
+
+    <div class="container col-md-12" style="margin-bottom: 100px;">
+        @if(Session::has('blog_created_message'))
+            <div class="alert alert-success">
+                {{ Session::get('blog_created_message') }}
+               
+            </div>
+        @endif
+
+        @if(Session::has('contact_form_send'))
+            <div class="alert alert-success ">
+                {{ Session::get('contact_form_send') }}
+               
+            </div>
+        @endif
+        </div>
         
             @foreach($categories as $category)
                 <div class="Item portfolio-item" style="margin-bottom: 100px">
@@ -43,8 +59,8 @@
                        
 
                 <div class="portfolio-caption bg-light">
-                    <h4>{{$category->name}}</h4>
-                    <p class="text-muted">{{$category->name}}</p>
+                    <h4 class="mt-4">{{$category->name}}</h4>
+                    <!-- <p class="text-muted">{{$category->name}}</p> -->
                     </div>
                
                     
