@@ -8,7 +8,9 @@
     <hr>
     <div>
         <p>{{ $mail_message }}</p>
-        <h5>This message is send to from larablog.com</h5>
+        <p>{{ $phone }}</p>
+        <p>{{ $email }}</p>
+        <h5>This message is send to from JourneyUK.co.uk</h5>
     </div>
 
 </body>

@@ -28,7 +28,7 @@
         <main class="py-4">
             @yield('content')
         </main>
-        @include('layouts.contact')
+        @include('emails.contact')
         @include('layouts.footer')
     </div>
 

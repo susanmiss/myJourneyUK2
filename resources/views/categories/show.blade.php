@@ -3,10 +3,19 @@
 
 @section('content')
 
-    <header class="container">
-  
-            <img src="/images/featured_image/{{ $category->featured_image ? $category->featured_image : '' }}" alt="{{$category->name }}" style="height: 500px; display:block; margin: auto;" >
-            <h1 class="text-center">{{ $category->name }}</h1>
+    <header class="masthead" style="background-image: url('/images/post_image/{{ $category->featured_image }}'); background-position: center center; background-size: cover; background-attachment: scroll; background-repeat: no-repeat;">
+    <div class="container">
+        <div class="intro-text">
+            <div class="intro-heading text-uppercase"></div>
+        </div>
+    </div>
+
+    <h1 class="text-center pb-5" style="overflow-wrap: break-word;">{{ $category->name }}</h1>
+                   
+    </header>
+
+   
+            <hr>
 
             @if(Auth::user() && Auth::user()->role_id === 1)
 
@@ -21,66 +30,35 @@
                     </form>
                 </div>
             </div>
-
+            <hr>
             @endif
-    </header>
 
         <div class="col mt-5">
             @foreach($category->blog as $blog)
                 <a href="{{ route('blogs.show', [$blog->slug]) }}" style="text-decoration: none;">
-                    <div class="container shadow p-5 mb-5 rounded bg-light" style="height: 500px;  border-radius: 20px;" id="blog-container">
-                        <h2 class="mb-5 text-center">{{ $blog->title }}</h2>
+                    <div class="container shadow p-5 mb-5 rounded bg-light" style="min-height: 750px;  border-radius: 20px;" id="blog-container">
+                    <h1 class="text-center"><a href="{{ route('blogs.show', [$blog->slug]) }}" style="overflow-wrap: break-word;">{{ str_limit($blog->title, 50) }}</a></h1>
 
-                        <div class="container">
-                            <div class="row text-center" >
+                        <div class="text-center">
+                        @if($blog->featured_image)
+                        <img src="/images/post_image/{{ $blog->featured_image ? $blog->featured_image : '' }}" alt="{{ str_limit($blog->title, 50) }}" class="img-fluid featured_image text-center" style="max-width:400px;height:auto;"><br/>
+                        @endif
 
-                                <div class="col-md-12 pt-5 col-sm-12 "   >
-                                    <p class="text-center">{!! str_limit($blog->body, 50) !!}</p>
+                        <div class="text-center">
+            @if($blog->user)
+                Author: <a href="{{ route('users.show', $blog->user->name) }}">{{ $blog->user->name }}</a> | Posted: {{ $blog->created_at->diffForHumans() }}
+            @endif
+            </div>
+            </div>
 
-                             
-                                </div>
-
-                                <div class="col-md-12 col-sm-12 container-carr" >
-
-                                    <!-- Carrousell -->
-                                    <div id="carouselExampleControls " class="carousel slide" data-ride="carousel" >
-
-                                   
-                                        <div class="carousel-inner " >
-                                            
-                                            <div class="carousel-item active ">
-                                            <img class="d-block w-100" src="/images/post_image/{{ $blog->image0 }}" alt="{{$blog->title}}" style=" max-height: 350px;">
-                                            </div>
-                                            <div class="carousel-item  ">
-                                            <img class="d-block w-100" src="/images/post_image/{{ $blog->image1 }}" alt="{{$blog->title}}" style="max-height: 350px;">
-                                            </div>
-                                            <div class="carousel-item  ">
-                                            <img class="d-block w-100" src="/images/post_image/{{ $blog->image2 }}" alt="{{$blog->title}}" style="max-height: 350px;">
-                                            </div>
-                                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                            <span class="sr-only">Previous</span>
-                                        </a>
-                                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span class="sr-only">Next</span>
-                                        </a>
-                                                                                
-                                        </div>
-                                       
-                                        </div>
-                                    <!-- Carrousel End -->
-                                     
-                                </div>
-                            
-                
-                            </div>
-                        </div>
-                        
-
-                    </div>
-                </a>
-            @endforeach
+            <div class="lead text-center mt-5 " >
+            <p>{!! str_limit($blog->body, 120) !!}</p>
+            </div>
+            </div>
+        
+            </div>
+            <br><br>
+        @endforeach
         </div>
 
     </div>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@include('partials.tinymce')
+
 
 $x = 20;
 
@@ -19,9 +19,28 @@ $x = 20;
                </div>
 
                <div class="form-group">
+                   <label for="address0">Address</label>
+                   <input type="text" name="address0" class="form-control" value="{{ $blog->address0 }}">
+               </div>
+
+               <div class="form-group">
+                   <label for="city0">City</label>
+                   <input type="text" name="city0" class="form-control" value="{{ $blog->city0 }}">
+               </div>
+
+               <div class="form-group">
+                   <label for="region0">Region</label>
+                   <input type="text" name="region0" class="form-control" value="{{ $blog->region0 }}">
+               </div>
+
+               <div class="form-group">
                    <label for="body">Body</label>
-                   {{-- <textarea name="body" class="form-control">{{ $blog->body }}</textarea> --}}
-                   <textarea name="body" class="form-control my-editor">{{ $blog->body }}</textarea>
+                   <textarea name="body" class="form-control">{{ $blog->body }}</textarea>
+               </div>
+
+               <div class="form-group">
+                   <label for="video0">Video - Just the number, ex: PAwzzBXUNNY</label>
+                   <input type="text" name="video0" class="form-control" value="{{$blog->video0}}">
                </div>
 
                <div class="form-group form-check form-check-inline mr-3">
@@ -43,11 +62,11 @@ $x = 20;
                <div class="form-group">
                   <label class="btn btn-default">
                    <span class="btn btn-outline btn-sm btn-warning">Featured Image</span>
-                   <input type="file" name="featured_image" class="form-control">
+                   <input type="file" name="featured_image" class="form-control" >
                  </label>
                </div>
 
-               @for ($x = 0; $x <= 10; $x++) 
+               @for ($x = 0; $x <= 20; $x++) 
                    
                    <div class="form-group">
                      <label class="btn btn-default">

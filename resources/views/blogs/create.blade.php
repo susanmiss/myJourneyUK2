@@ -21,23 +21,23 @@
                </div>
 
                <div class="form-group">
-                   <label for="address">Address</label>
-                   <input type="text" name="address" class="form-control">
+                   <label for="address0">Address</label>
+                   <input type="text" name="address0" class="form-control">
                </div>
 
                <div class="form-group">
-                   <label for="city">City</label>
-                   <input type="text" name="city" class="form-control">
+                   <label for="city0">City</label>
+                   <input type="text" name="city0" class="form-control">
                </div>
 
                <div class="form-group">
-                   <label for="region">Region</label>
-                   <input type="text" name="region" class="form-control">
+                   <label for="region0">Region</label>
+                   <input type="text" name="region0" class="form-control">
                </div>
 
                <div class="form-group">
                    <label for="body">Body</label>
-                   <textarea name="body" class="form-control my-editor">{!! old('body') !!}</textarea>
+                   <textarea name="body" class="form-control"></textarea>
                </div>
 
                <div class="form-group form-check form-check-inline">
@@ -56,8 +56,8 @@
                </div>
 
                <div class="form-group">
-                   <label for="video">video</label>
-                   <input type="text" name="video" class="form-control">
+                   <label for="video0">Video - Just the number, ex: PAwzzBXUNNY</label>
+                   <input type="text" name="video0" class="form-control">
                </div>
 
                 
