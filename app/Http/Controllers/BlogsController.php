@@ -16,9 +16,22 @@ class BlogsController extends Controller {
 		$this->middleware('admin', ['only' => ['delete', 'trash', 'restore', 'permanentDelete']]);
 	}
 
-	public function index() {
-		// $blogs = Blog::where('status', 1)->latest()->get();
-		$blogs = Blog::latest()->paginate(10);
+	// public function index() {
+	// 	// $blogs = Blog::where('status', 1)->latest()->get();
+	// 	$blogs = Blog::latest()->paginate(10);
+	// 	return view('blogs.index', compact('blogs'));
+	// }
+
+	public function index(Request $request) {
+		
+	
+		$blogs = Blog::where(function($query) use ($request){
+			if(($term = $request->get('term'))) {
+				$query->orWhere('title', 'like', '%' . $term . '%');
+			}
+		})
+		->orderBy("id", "desc")
+		->paginate(2);
 		return view('blogs.index', compact('blogs'));
 	}
 

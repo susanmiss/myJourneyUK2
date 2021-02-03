@@ -10,19 +10,19 @@ class CategoryTableSeeder extends Seeder {
 	 * @return void
 	 */
 	public function run() {
-		$html = new Category();
-		$html->name = 'HTML';
-		$html->slug = 'html';
-		$html->save();
+		$london = new Category();
+		$london->name = 'London';
+		$london->slug = 'london';
+		$london->save();
 
-		$css = new Category();
-		$css->name = 'CSS';
-		$css->slug = 'css';
-		$css->save();
+		$scotland = new Category();
+		$scotland->name = 'scotland';
+		$scotland->slug = 'scotland';
+		$scotland->save();
 
-		$php = new Category();
-		$php->name = 'PHP';
-		$php->slug = 'php';
-		$php->save();
+		$wales = new Category();
+		$wales->name = 'wales';
+		$wales->slug = 'wales';
+		$wales->save();
 	}
 }
