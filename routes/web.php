@@ -2,7 +2,7 @@
 
 Route::get('/', 'CategoryController@index');
 
-Auth::routes();
+Auth::routes(['/register' => false ]);
 
 Route::get('/blogs', 'BlogsController@index')->name('blogs');
 Route::get('/blogs/create', 'BlogsController@create')->name('blogs.create');
@@ -26,5 +26,5 @@ Route::resource('categories', 'CategoryController');
 Route::resource('users', 'UserController');
 
 // contact forms
-Route::get('contact', 'MailController@contact')->name('contact');
-Route::post('contact/send', 'MailController@send')->name('mail.send');
+Route::get('/contact', 'MailController@contact')->name('contact');
+Route::post('/contact/send', 'MailController@send')->name('mail.send');

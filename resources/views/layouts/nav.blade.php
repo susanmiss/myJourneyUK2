@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink" id="mainNav" data-test="nav-element">
             <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="{{ url('/') }}">
@@ -30,7 +29,9 @@
                             <li><a class="nav-link" href="{{ route('register') }}">Register</a></li> -->
                         @else
                         <li class="nav-item dropdown">
-                       
+                     
+                             
+                                
                                    <a class="nav-link" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
