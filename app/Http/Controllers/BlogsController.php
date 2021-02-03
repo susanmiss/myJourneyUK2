@@ -12,7 +12,7 @@ use Session;
 class BlogsController extends Controller {
 
 	public function __construct() {
-		$this->middleware('author', ['only' => ['create', 'store', 'edit', 'update']]);
+		// $this->middleware('author', ['only' => ['create', 'store', 'edit', 'update']]);
 		$this->middleware('admin', ['only' => ['delete', 'trash', 'restore', 'permanentDelete']]);
 	}
 

@@ -1,4 +1,4 @@
-ob_start()
+
 @extends('layouts.app')
 
 @include('partials.meta_static')

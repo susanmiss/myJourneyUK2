@@ -1,4 +1,4 @@
-ob_start()
+
 @extends('layouts.app')
 
 @section('content')
@@ -22,16 +22,16 @@ ob_start()
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Welcome to Journey UK </h2>
             <h3 class="section-subheading text-welcome">'It's a dangerous business, Frodo, going out your door. You step onto the road, and if you don't keep your feet, there's no knowing where you might be swept off to...' Bilbo Baggings </h3>
-            <!-- {!! Form::open(['action' => 'BlogsController@index', 'method' =>'GET', 'role' =>'search']) !!}
+            {!! Form::open(['action' => 'BlogsController@index', 'method' =>'GET', 'role' =>'search']) !!}
               <div class="input-group">
-                {!! Form::text('term', Request::get('term'), ['class' => 'form-control', 'placeholder' => 'Search your city, place, region. Eg. Oxfordshire', 'id' => 'term']) !!} -->
+                {!! Form::text('term', Request::get('term'), ['class' => 'form-control', 'placeholder' => 'Search your city, place, region. Eg. Oxfordshire', 'id' => 'term']) !!}
                 @csrf
                 <span class="input-group-btn" >
                   <button class="btn btn-secondary"  type="submit">Search</button>
                 </span>
 
               </div>
-            <!-- {!! Form::close() !!}  -->
+            {!! Form::close() !!} 
             
 
           </div>
@@ -67,7 +67,7 @@ ob_start()
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img src="/images/post_image/{{ $category->featured_image ? $category->featured_image : '' }}" alt="{{$category->title }}" class="img-fluid" style="width: 350px; height: 260px;" >
+                    <img src="/images/featured_image/{{ $category->featured_image ? $category->featured_image : '' }}" alt="{{$category->title }}" class="img-fluid" style="width: 350px; height: 260px;" >
                 </a>
                 
         
