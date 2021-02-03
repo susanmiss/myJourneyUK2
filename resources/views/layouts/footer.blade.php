@@ -1,3 +1,4 @@
+ob_start()
 <div>
   <footer class="footer">
   <div class="container">

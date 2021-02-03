@@ -1,3 +1,4 @@
+ob_start()
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink" id="mainNav" data-test="nav-element">
             <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="{{ url('/') }}">
