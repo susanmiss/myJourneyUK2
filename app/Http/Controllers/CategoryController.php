@@ -35,7 +35,7 @@ class CategoryController extends Controller {
         if($file = $request->file('featured_image')){
             $name = uniqid() . $file->getClientOriginalName();
             $name = strtolower(str_replace(' ', '-', $name));
-            $file->move('images/featured_image/', $name);
+            $file->move('images/post_image/', $name);
             $input['featured_image'] = $name;
         }
          $categories = Category::create($input);
@@ -70,11 +70,11 @@ class CategoryController extends Controller {
 
 		if($file = $request->file('featured_image')){
 			if($categories->featured_image){
-				unlink('images/featured_image/' . $categories->featured_image);
+				unlink('images/post_image/' . $categories->featured_image);
 			}
 			$name = uniqid() . $file->getClientOriginalName();
 			$name = strtolower(str_replace(' ', '-', $name));
-			$file->move('images/featured_image/', $name);
+			$file->move('images/post_image/', $name);
 			$input['featured_image'] = $name;
 
 		}

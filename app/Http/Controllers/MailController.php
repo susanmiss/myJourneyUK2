@@ -16,7 +16,7 @@ class MailController extends Controller {
 		$rules = [
 			'name' => ['required', 'max:32'],
 			'email' => ['required', 'max:32', 'email'],
-			'subject' => ['required', 'max:50'],
+			'phone' => ['max:50'],
 			'mail_message' => ['required', 'max:2000'],
 		];
 
@@ -25,12 +25,12 @@ class MailController extends Controller {
 		$data = [
 			'name' => $request->name,
 			'email' => $request->email,
-			'subject' => $request->subject,
+			'phone' => $request->phone,
 			'mail_message' => $request->mail_message,
 		];
 
 		Mail::send('emails.send', $data, function ($message) {
-			$message->to('susanfochesatto@gmail.com', 'Susan')->subject('Mail received from myJourneyUK');
+			$message->to('susanfochesatto@gmail.com', 'Susan')->subject('Mail received from JourneyUK');
 		});
 
 		Session::flash('contact_form_send', 'Thanks for contacting us, we will get back to you shortly!');

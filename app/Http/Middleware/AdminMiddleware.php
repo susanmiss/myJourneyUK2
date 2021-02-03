@@ -15,7 +15,7 @@ class AdminMiddleware {
 	public function handle($request, Closure $next) {
 		// return $next($request);
 		$user = $request->user();
-		if ($user->role_id === 1) {
+		if ($user->role->id === 1) {
 			return $next($request);
 		}
 		return redirect('/');
