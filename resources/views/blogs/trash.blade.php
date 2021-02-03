@@ -23,6 +23,7 @@
 
         {{-- permanent delete --}}
         <form method="post" action="{{ route('blogs.permanent-delete', $blog->id) }}">
+        @csrf
             {{ method_field('delete') }}
             <button type="submit" class="btn btn-danger btn-sm pull-left btn-margin-right">
                 Permanent delete

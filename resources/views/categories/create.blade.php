@@ -9,6 +9,7 @@
 
        <div class="col-md-12">
            <form action="{{ route('categories.store') }}" method="post" enctype="multipart/form-data">
+           @csrf
                <div class="form-group">
                    <label for="name">name</label>
                    <input type="text" name="name" class="form-control">

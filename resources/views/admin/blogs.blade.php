@@ -35,6 +35,7 @@
                     {{-- {!! str_limit($blog->body, 100) !!} --}}
 
                     <form action="{{ route('blogs.update', $blog->id) }}" method="post">
+                    @csrf
                         {{ method_field('patch') }}
                             <input name="status" type="checkbox" value="1" checked style="display:none;">
                             <button type="submit" class="btn btn-success btn-xs">Publish</button>

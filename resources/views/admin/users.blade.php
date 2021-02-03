@@ -12,6 +12,7 @@
                 @foreach($users as $user)
                     <div class="col-md-4">
                     <form action="{{ route('users.update', $user->id) }}" method="post">
+                    @csrf
                         {{ method_field('patch') }}
                         <div class="form-group">
                             <input class="form-control" value="{{ $user->name }}" disabled>

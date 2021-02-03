@@ -12,7 +12,7 @@
 
        <div class="col-md-12">
            <form action="{{ route('blogs.store') }}" method="post" enctype="multipart/form-data">
-
+           @csrf
               @include('partials.error-message')
 
                <div class="form-group">

@@ -12,6 +12,7 @@ $x = 20;
 
        <div class="col-md-12">
            <form action="{{ route('blogs.update', $blog->id) }}" method="post" enctype="multipart/form-data">
+           @csrf
             {{ method_field('patch') }}
                <div class="form-group">
                    <label for="title">Title</label>

@@ -14,6 +14,7 @@
 
               <div class="col-lg-12">
               <form method="post" action="{{ route('mail.send') }}">
+              @csrf
               @include('partials.error-message');
                 <div class="row">
                     <div class="col-md-6">
